@@ -1,0 +1,19 @@
+import personas.*
+import spa.*
+
+test "Ramiro visita al spa y debe bajar su nivel de contractura y no tener piel grasosa" {
+
+	ramiro.jugarPaddle()
+	const contracturaInicial = ramiro.nivelContractura()
+	spa.atender(ramiro)
+	assert.that(ramiro.nivelContractura() < contracturaInicial)
+	assert.notThat(ramiro.pielGrasosa())
+}
+
+test "Ramiro visita el spa 2 veces y obtiene doble ración de masajes"{
+	ramiro.jugarPaddle()
+	ramiro.jugarPaddle()
+	spa.atender(ramiro)
+	spa.atender(ramiro)
+	assert.that(ramiro.nivelContractura() == 0)
+}
