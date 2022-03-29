@@ -68,9 +68,7 @@ object ramiro{
 	
 	method recibirMasajes(){
 		nivelContractura -= 2
-		if (nivelContractura < 0){
-			nivelContractura = 0
-		}
+		nivelContractura = nivelContractura.max(0)
 	} 
 	
 	method darBanioDeVapor(){
